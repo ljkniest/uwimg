@@ -221,4 +221,15 @@ void hsv_to_rgb(image im)
 
 }
 
-void scale_image(image im, int c, float v)
+void scale_image(image im, int c, float v) {
+  for (int w = 0; w < im.w; w++) {
+    for (int h = 0; h < im.h; h++) {
+      float val = get_pixel(im, c, h, w);
+      float new_val = val * v;
+      if (new_val > 1.0) {
+        new_val = 1.0;
+      }
+      set_pixel(im, c, h, w, new_val);
+    }
+  } 
+}
