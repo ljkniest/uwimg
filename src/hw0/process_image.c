@@ -220,3 +220,5 @@ void hsv_to_rgb(image im)
     }
 
 }
+
+void scale_image(image im, int c, float v)

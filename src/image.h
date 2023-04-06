@@ -48,6 +48,8 @@ typedef struct{
 // Basic operations
 float get_pixel(image im, int c, int h, int w);
 void set_pixel(image im, int c, int h, int w, float v);
+int clamp_pixel(int limit, int actual);  // added
+int in_range(int limit, int actual);  // added
 image copy_image(image im);
 image rgb_to_grayscale(image im);
 image grayscale_to_rgb(image im, float r, float g, float b);
@@ -60,6 +62,7 @@ image get_channel(image im, int c);
 int same_image(image a, image b, float eps);
 image sub_image(image a, image b);
 image add_image(image a, image b);
+void scale_image(image im, int c, float v);  // added
 
 // Loading and saving
 image make_image(int c, int h, int w);
